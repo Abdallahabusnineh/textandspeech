@@ -25,7 +25,8 @@ class HomeScreen extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
               onPressed: () {
-                Get.to(TextToSpeechScreen());
+                Get.to
+                  (TextToSpeechScreen());
               }, child: Text('Go to Text To Speech',style: TextStyle(color: Colors.white),),
             ),
         

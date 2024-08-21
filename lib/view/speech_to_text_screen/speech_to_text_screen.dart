@@ -16,7 +16,7 @@ class SpeechToTextScreen extends StatelessWidget {
               appBar: AppBar(
                 actions: [
                   IconButton(
-                    icon: Icon(Icons.close),
+                    icon: Icon(Icons.arrow_back_ios),
                     onPressed: () {
                       controller.stopListening();
                       Get.back();

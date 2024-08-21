@@ -18,14 +18,14 @@ class HomeScreen extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
               onPressed: () {
-                Get.off(SpeechToTextScreen());
+                Get.to(SpeechToTextScreen());
               }, child: Text('Go to Speech To Text',style: TextStyle(color: Colors.white),),
             ),
             SizedBox(height: 20,),
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
               onPressed: () {
-                Get.off(TextToSpeechScreen());
+                Get.to(TextToSpeechScreen());
               }, child: Text('Go to Text To Speech',style: TextStyle(color: Colors.white),),
             ),
         

@@ -12,6 +12,14 @@ class TextToSpeechScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          actions: [
+            IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: Icon(Icons.arrow_back),
+            ),
+          ],
           backgroundColor: Colors.blue,
           title: Text(
               'Text To Speech',

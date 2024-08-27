@@ -24,10 +24,13 @@ class TextToSpeechController extends GetxController {
   void initTTS() async {
     flutterTts.getVoices.then((voices) {
       try {
-        voiceList = List<Map>.from(voices);
-        voiceList=voiceList.where((element) => element['locale'].toString().contains('en-US')).toList();
+       /* voiceList = List<Map>.from(voices);
+        voiceList=voiceList.where((element) => element['name'].toString().contains('en-US')).toList();
+       */
+        voiceList.add({'name': 'English', 'locale': 'en'});
+        voiceList.add({'name': 'Arabic', 'locale': 'ar'});
         print(voiceList);
-          currentVoice=voiceList.where((element) => element['name'].toString().contains('en-us-x-iol-local')).toList()[0];
+          currentVoice=voiceList[0];
           setVoice(currentVoice!);
       } catch (e) {
         print(e);
@@ -67,7 +70,22 @@ void stopAudioPlaying(){
   update();
 
 }
+setLanguage(){
+    if(currentVoice!['locale']=='ar'){
+      flutterTts.setLanguage('ar-SA');
+      showToast(text: 'language changed to arabic', state: ToastState.SUCCESS);
+    }
+    else{
+      flutterTts.setLanguage('en');
+      showToast(text: 'language changed to english', state: ToastState.SUCCESS);
+    }
+  update();
+}
 
+/*void clearText(){
+  text='';
+  update();
+}*/
 void changeVolume(double value)async{
   volume=value;
   await flutterTts.setVolume(volume);

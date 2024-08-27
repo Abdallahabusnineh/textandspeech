@@ -46,6 +46,7 @@ class TextToSpeechScreen extends StatelessWidget {
                   onChanged: (value) {
                       controller.currentVoice = value as Map;
                       controller.setVoice(controller.currentVoice!);
+                      controller.setLanguage();
                   },
                 ),
                 SizedBox(
@@ -61,9 +62,15 @@ class TextToSpeechScreen extends StatelessWidget {
                       ),
 
                       labelText: 'enter text',
+                      suffixIcon:  IconButton(
+                      icon: Icon(Icons.clear),
+            onPressed: () {
+
+            },),
                     ),
                     onChanged: (value) {
                         controller.text = value;
+
                     },
                     style: TextStyle(fontSize: 20),
                   ),
